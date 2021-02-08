@@ -37,13 +37,18 @@ public class Job {
         String aPositionType = this.positionType.toString();
         String aCoreCompetency = this.coreCompetency.toString();
 
-        if (aName.equals("")) aName = "Data not available";
-        if (aEmployer.equals("")) aEmployer = "Data not available";
-        if (aLocation.equals("")) aLocation = "Data not available";
-        if (aPositionType.equals("")) aPositionType = "Data not available";
-        if (aCoreCompetency.equals("")) aCoreCompetency = "Data not available";
 
-        return "\nID: " + this.id + "\nName: " + aName + "\nEmployer: " + aEmployer + "\nLocation: " + aLocation + "\nPosition Type: " + aPositionType + "\nCore Competency: " + aCoreCompetency + "\n";
+
+        if (aName.equals("") & aEmployer.equals("") & aLocation.equals("") & aPositionType.equals("") & aCoreCompetency.equals("")){
+            return "OOPS! This job does not seem to exist.";
+        }else
+            if (aName.equals("")) aName = "Data not available";
+            if (aEmployer.equals("")) aEmployer = "Data not available";
+            if (aLocation.equals("")) aLocation = "Data not available";
+            if (aPositionType.equals("")) aPositionType = "Data not available";
+            if (aCoreCompetency.equals("")) aCoreCompetency = "Data not available";
+
+            return "\nID: " + this.id + "\nName: " + aName + "\nEmployer: " + aEmployer + "\nLocation: " + aLocation + "\nPosition Type: " + aPositionType + "\nCore Competency: " + aCoreCompetency + "\n";
     }
 
     public int getId() {
