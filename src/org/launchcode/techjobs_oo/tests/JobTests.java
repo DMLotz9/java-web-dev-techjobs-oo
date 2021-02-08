@@ -4,6 +4,7 @@ import org.junit.*;
 import org.launchcode.techjobs_oo.*;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 
 public class JobTests {
@@ -37,21 +38,34 @@ public class JobTests {
         assertEquals("Persistence", fullConstructorJob.getCoreCompetency().toString());
     }
 
-//    @Test
-//    public void testJobsForEquality(){
-//         Job testJobThree = new Job("Web Dev", new Employer("Microsoft"), new Location("St. Louis"), new PositionType("Developer"), new CoreCompetency("Java"));
-//
-//         Job testJobFour = new Job("Web Dev", new Employer("Microsoft"), new Location("St. Louis"), new PositionType("Developer"), new CoreCompetency("Java"));
-//
-//        assertEquals(testJobThree, testJobFour);
-//
-//
-//    }
+    @Test
+    public void testJobsForEquality(){
+         Job testJobThree = new Job("Web Dev", new Employer("Microsoft"), new Location("St. Louis"), new PositionType("Developer"), new CoreCompetency("Java"));
+
+         Job testJobFour = new Job("Web Dev", new Employer("Microsoft"), new Location("St. Louis"), new PositionType("Developer"), new CoreCompetency("Java"));
+
+        assertFalse(testJobThree == testJobFour);
+
+
+    }
 
     @Test
     public void testToStringDisplayingBlankLines(){
         Job testJobFive = new Job("Web Dev", new Employer("Microsoft"), new Location("St. Louis"), new PositionType("Developer"), new CoreCompetency("Java"));
 
-        assertEquals("\n", testJobFive.toString());
+        assertEquals(testJobFive.toString().startsWith("\n"),true );
+
+        assertEquals(testJobFive.toString().endsWith("\n"),true );
+    }
+
+    @Test
+    public void testToStringReturnForCorrectData(){
+         // Data should contain label for each field followed by field data. Each field on it's own line.
+
+        Job testJobFive = new Job("Web Dev", new Employer("Microsoft"), new Location("St. Louis"), new PositionType("Developer"), new CoreCompetency("Java"));
+
+        assertEquals(testJobFive.toString().startsWith("\n"),true );
+
+        assertEquals(testJobFive.toString().endsWith("\n"),true );
     }
 }

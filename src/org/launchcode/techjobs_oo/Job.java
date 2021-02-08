@@ -29,10 +29,21 @@ public class Job {
 
     }
 
-    public String toString(){
-        String toString = "\nID: " + this.id + "\nName: " + this.name + "\nEmployer: " + this.employer + "\nLocation: " + this.location + "\nPosition Type: " + this.positionType + "\nCore Competency: " + this.coreCompetency;
+    public String toString() {
 
-        return toString;
+        String aName = this.name;
+        String aEmployer = this.employer.toString();
+        String aLocation = this.location.toString();
+        String aPositionType = this.positionType.toString();
+        String aCoreCompetency = this.coreCompetency.toString();
+
+        if (aName.equals("")) aName = "Data not available";
+        if (aEmployer.equals("")) aEmployer = "Data not available";
+        if (aLocation.equals("")) aLocation = "Data not available";
+        if (aPositionType.equals("")) aPositionType = "Data not available";
+        if (aCoreCompetency.equals("")) aCoreCompetency = "Data not available";
+
+        return "\nID: " + this.id + "\nName: " + aName + "\nEmployer: " + aEmployer + "\nLocation: " + aLocation + "\nPosition Type: " + aPositionType + "\nCore Competency: " + aCoreCompetency + "\n";
     }
 
     public int getId() {

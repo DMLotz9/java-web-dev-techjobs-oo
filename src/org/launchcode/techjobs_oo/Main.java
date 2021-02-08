@@ -1,6 +1,7 @@
 package org.launchcode.techjobs_oo;
 
 import java.util.ArrayList;
+import org.launchcode.techjobs_oo.Job.*;
 
 public class Main {
 
@@ -18,5 +19,4 @@ public class Main {
             System.out.println(job);
         }
     }
-
 }
